@@ -11,8 +11,8 @@ export const MovieIndex = async (req, res) => {
 
 export const MovieDetail = async(req, res) => {
         try {
-       const movie = await Movie.findById(req.params.id)
-       if(movie == null) {
+        const movie = await Movie.findById(req.params.id)
+        if(movie == null) {
         return res.status(404).json({message: "cannot find movie"});
        } else {
         res.json(movie);
@@ -64,13 +64,24 @@ export const MovieUpdate = async (req, res) => {
     }
 };
 
-export const MovieDelete = async (req, res) => {
-   const movieId = req.params.id
+// export const MovieDelete = async (req, res) => {
+//    const movieId = req.params.id
 
-   try {
-      await Movie.findOne().deleteOne({_id: movieId});
-      res.json({message: "Movie deleted"});
-   } catch (error) {
-      res.status(500).json({message: error.message})
-   }
+//    try {
+//       await Movie.findOne().deleteOne({_id: movieId});
+//       res.json({message: "Movie deleted"});
+//    } catch (error) {
+//       res.status(500).json({message: error.message})
+//    }
+// };
+
+export const MovieDelete = async (req, res) => {
+  const movieId = req.params.id;
+
+  try {
+    await Movie.deleteOne({ _id: movieId });
+    res.json({ message: "Movie deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };

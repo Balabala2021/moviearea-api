@@ -4,8 +4,8 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "server": "nodemon main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js",
+    "dev": "nodemon main.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,7 @@
   "description": "",
   "dependencies": {
     "dotenv": "^17.2.3",
-    "express.js": "^1.0.0",
+    "express": "^4.21.1",
     "mongoose": "^8.19.2"
   }
 }
