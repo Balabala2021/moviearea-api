@@ -15,7 +15,7 @@ const router = express.Router();
 // R - For Reading 
 router.get('/', MovieIndex );
 
-router.get("/:id",MovieDetail)
+router.get("/:id", MovieDetail)
 
 // C- For Creating movies
 router.post('/', MovieCreate );
@@ -27,3 +27,16 @@ router.put('/:id', MovieUpdate );
 router.delete('/:id', MovieDelete );
 
 export default router;
+
+
+
+
+
+
+
+
+
+
+
+
+
